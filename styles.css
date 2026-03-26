@@ -172,7 +172,6 @@ body {
 
 .problem-card:hover,
 .solution-pill:hover,
-.stakeholder-card:hover,
 .value-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 22px 55px rgba(15, 23, 42, 0.16);
@@ -189,6 +188,8 @@ body {
   box-shadow: 0 14px 38px rgba(15, 23, 42, 0.12);
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .sc-hint {
@@ -291,9 +292,8 @@ body {
 }
 
 .stakeholder-card:hover {
-  transform: translateY(-3px);
   box-shadow: 0 24px 60px rgba(15, 23, 42, 0.2);
-  border-color: rgba(11, 31, 51, 0.2);
+  border-color: rgba(217, 119, 66, 0.3);
 }
 
 /* Outcomes cards */
