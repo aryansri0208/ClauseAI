@@ -45,14 +45,8 @@
           class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16"
         >
           <div class="flex items-center gap-2">
-            <div
-              class="h-8 w-8 rounded-lg bg-midnight flex items-center justify-center shadow-sm"
-            >
-              <span class="text-sand text-lg font-semibold">C</span>
-            </div>
-            <span class="text-base sm:text-lg font-semibold tracking-tight"
-              >ClauseAI</span
-            >
+            <img src="assets/logo.png" alt="ClauseAI logo" class="h-8 w-auto" />
+            <span class="text-base sm:text-lg font-semibold tracking-tight">ClauseAI</span>
           </div>
           <nav class="hidden md:flex items-center gap-8 text-sm">
             <a href="#how-it-works" class="nav-link">How it works</a>
@@ -140,7 +134,7 @@
                       class="inline-flex items-center gap-1 rounded-full bg-white/70 px-2 py-1 text-[10px] uppercase tracking-wide text-navy/60 border border-navy/5"
                     >
                       Live telemetry
-                      <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
+                      <span class="h-1.5 w-1.5 rounded-full bg-emerald-500 hero-live-dot"></span>
                     </span>
                   </div>
                   <div class="space-y-3">
@@ -169,15 +163,18 @@
                       >
                     </div>
                   </div>
-                  <div class="relative py-2">
+                  <div class="relative py-2 hero-connector">
                     <div
                       class="absolute left-1/2 top-0 -translate-x-1/2 h-full w-px bg-gradient-to-b from-navy/0 via-navy/20 to-navy/0"
                     ></div>
-                    <div class="flex justify-center">
+                    <span class="hero-particle"></span>
+                    <span class="hero-particle"></span>
+                    <span class="hero-particle"></span>
+                    <div class="flex justify-center relative z-10">
                       <div
                         class="inline-flex items-center gap-2 rounded-full bg-white/80 border border-navy/10 px-3 py-1 text-[11px] shadow-sm"
                       >
-                        <span class="h-1.5 w-1.5 rounded-full bg-accent"></span>
+                        <span class="h-1.5 w-1.5 rounded-full bg-accent hero-route-dot"></span>
                         Routed through ClauseAI
                       </div>
                     </div>
@@ -189,31 +186,17 @@
                     <div
                       class="grid grid-cols-1 sm:grid-cols-3 gap-2 text-[11px]"
                     >
-                      <div
-                        class="rounded-lg border border-navy/10 bg-white/80 px-3 py-2"
-                      >
+                      <div class="rounded-lg border border-navy/10 bg-white/80 px-3 py-2 hero-intel-card">
                         <div class="font-medium text-xs">Cost intelligence</div>
-                        <div class="text-navy/60 mt-1">
-                          Forecast spend &amp; detect leakage.
-                        </div>
+                        <div class="text-navy/60 mt-1">Forecast spend &amp; detect leakage.</div>
                       </div>
-                      <div
-                        class="rounded-lg border border-navy/10 bg-white/80 px-3 py-2"
-                      >
-                        <div class="font-medium text-xs">
-                          Performance monitoring
-                        </div>
-                        <div class="text-navy/60 mt-1">
-                          Track latency &amp; reliability.
-                        </div>
+                      <div class="rounded-lg border border-navy/10 bg-white/80 px-3 py-2 hero-intel-card">
+                        <div class="font-medium text-xs">Performance monitoring</div>
+                        <div class="text-navy/60 mt-1">Track latency &amp; reliability.</div>
                       </div>
-                      <div
-                        class="rounded-lg border border-navy/10 bg-white/80 px-3 py-2"
-                      >
+                      <div class="rounded-lg border border-navy/10 bg-white/80 px-3 py-2 hero-intel-card">
                         <div class="font-medium text-xs">Risk detection</div>
-                        <div class="text-navy/60 mt-1">
-                          Hallucinations &amp; drift alerts.
-                        </div>
+                        <div class="text-navy/60 mt-1">Hallucinations &amp; drift alerts.</div>
                       </div>
                     </div>
                   </div>
@@ -260,8 +243,9 @@
           </div>
         </section>
 
+        <!-- HOW IT WORKS (tabbed: Overview | Architecture | Demo) -->
         <!-- HOW IT WORKS OVERVIEW -->
-        <section id="how-it-works-overview" class="section">
+        <section id="how-it-works" class="section">
           <div class="section-inner">
             <div class="section-header">
               <p class="eyebrow">How it works</p>
@@ -272,6 +256,12 @@
                 infrastructure decisions.
               </p>
             </div>
+            <div class="flex flex-wrap gap-2 mb-8">
+              <button class="section-tab section-tab-active" data-scroll-to="#how-it-works">Overview</button>
+              <button class="section-tab" data-scroll-to="#architecture">Architecture</button>
+              <button class="section-tab" data-scroll-to="#demo">Demo</button>
+            </div>
+
             <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
               <article class="how-card">
                 <div class="how-step">1</div>
@@ -319,351 +309,205 @@
           </div>
         </section>
 
-        <!-- HOW CLAUSEAI WORKS - ARCHITECTURE -->
-        <section id="how-it-works" class="section border-y border-navy/5">
+        <!-- ARCHITECTURE -->
+        <section id="architecture" class="section border-y border-navy/5">
           <div class="section-inner">
             <div class="section-header">
               <p class="eyebrow">Architecture</p>
-              <h2 class="section-title">How ClauseAI Works</h2>
+              <h2 class="section-title">How ClauseAI works behind the scenes</h2>
               <p class="section-subtitle">
                 ClauseAI acts as the intelligence layer between your teams and AI
                 infrastructure — from pre-adoption decisions to live monitoring
                 and optimization.
               </p>
             </div>
+            <div class="flex flex-wrap gap-2 mb-8">
+              <button class="section-tab" data-scroll-to="#how-it-works">Overview</button>
+              <button class="section-tab section-tab-active" data-scroll-to="#architecture">Architecture</button>
+              <button class="section-tab" data-scroll-to="#demo">Demo</button>
+            </div>
+
             <div class="arch-container rounded-2xl bg-sand-card border border-navy/10 shadow-subtle">
-              <!-- Sidebar -->
               <div class="arch-sidebar" role="tablist" aria-label="ClauseAI architecture views">
-                <button
-                  type="button"
-                  class="arch-tab arch-active"
-                  data-arch-tab="decision"
-                  aria-selected="true"
-                >
+                <button type="button" class="arch-tab arch-active" data-arch-tab="decision" aria-selected="true">
                   <div class="arch-tab-title">Decision Mode</div>
-                  <div class="arch-tab-subtitle">
-                    Analyze vendors and architectures before committing.
-                  </div>
+                  <div class="arch-tab-subtitle">Analyze vendors and architectures before committing.</div>
                 </button>
-                <button
-                  type="button"
-                  class="arch-tab"
-                  data-arch-tab="management"
-                  aria-selected="false"
-                >
+                <button type="button" class="arch-tab" data-arch-tab="management" aria-selected="false">
                   <div class="arch-tab-title">Management Mode</div>
-                  <div class="arch-tab-subtitle">
-                    Continuously monitor and optimize deployed AI systems.
-                  </div>
+                  <div class="arch-tab-subtitle">Continuously monitor and optimize deployed AI systems.</div>
                 </button>
-                <button
-                  type="button"
-                  class="arch-tab"
-                  data-arch-tab="flow"
-                  aria-selected="false"
-                >
+                <button type="button" class="arch-tab" data-arch-tab="flow" aria-selected="false">
                   <div class="arch-tab-title">Architecture Flow</div>
-                  <div class="arch-tab-subtitle">
-                    See the full lifecycle of AI infrastructure decisions.
-                  </div>
+                  <div class="arch-tab-subtitle">See the full lifecycle of AI infrastructure decisions.</div>
                 </button>
               </div>
-
-              <!-- Diagram -->
               <div class="arch-diagram">
-                <!-- Decision mode -->
-                <div
-                  class="arch-view"
-                  data-arch-view="decision"
-                >
+                <div class="arch-view" data-arch-view="decision">
                   <div class="arch-layer">
                     <div class="arch-row">
                       <div class="arch-node node-hover">
                         <div class="arch-node-title">Vendor A</div>
                         <div class="arch-node-subtitle">Model &amp; infra option</div>
-                        <div class="node-tooltip">
-                          <p class="tooltip-title">Vendor A</p>
-                          <p class="tooltip-text">
-                            A potential foundation for AI workloads with specific
-                            tradeoffs in latency, cost, and capability.
-                          </p>
-                        </div>
+                        <div class="node-tooltip"><p class="tooltip-title">Vendor A</p><p class="tooltip-text">A potential foundation for AI workloads with specific tradeoffs in latency, cost, and capability.</p></div>
                       </div>
                       <div class="arch-node node-hover">
                         <div class="arch-node-title">Vendor B</div>
                         <div class="arch-node-subtitle">Embedding &amp; vector stack</div>
-                        <div class="node-tooltip">
-                          <p class="tooltip-title">Vendor B</p>
-                          <p class="tooltip-text">
-                            Provides embeddings and vector infrastructure evaluated
-                            against your retrieval patterns.
-                          </p>
-                        </div>
+                        <div class="node-tooltip"><p class="tooltip-title">Vendor B</p><p class="tooltip-text">Provides embeddings and vector infrastructure evaluated against your retrieval patterns.</p></div>
                       </div>
                       <div class="arch-node node-hover">
                         <div class="arch-node-title">Vendor C</div>
                         <div class="arch-node-subtitle">Inference platform</div>
-                        <div class="node-tooltip">
-                          <p class="tooltip-title">Vendor C</p>
-                          <p class="tooltip-text">
-                            Offers managed serving and routing for model workloads.
-                          </p>
-                        </div>
+                        <div class="node-tooltip"><p class="tooltip-title">Vendor C</p><p class="tooltip-text">Offers managed serving and routing for model workloads.</p></div>
                       </div>
                     </div>
                   </div>
-
                   <div class="arch-connector"></div>
-
                   <div class="arch-layer">
                     <div class="arch-row">
                       <div class="arch-node arch-node-center node-hover">
                         <div class="arch-node-title">ClauseAI Intelligence Engine</div>
-                        <div class="arch-node-subtitle">
-                          Central analysis of vendor and architecture options.
-                        </div>
+                        <div class="arch-node-subtitle">Central analysis of vendor and architecture options.</div>
                         <ul class="arch-node-list">
                           <li>Vendor Benchmarking</li>
                           <li>Cost Modeling</li>
                           <li>Lock-in Risk Analysis</li>
                           <li>Architecture Evaluation</li>
                         </ul>
-                        <div class="node-tooltip">
-                          <p class="tooltip-title">Decision intelligence</p>
-                          <p class="tooltip-text">
-                            ClauseAI runs your evaluation traffic against possible
-                            vendors and architectures, surfacing clear tradeoffs
-                            before anything is deployed.
-                          </p>
-                        </div>
+                        <div class="node-tooltip"><p class="tooltip-title">Decision intelligence</p><p class="tooltip-text">ClauseAI runs your evaluation traffic against possible vendors and architectures, surfacing clear tradeoffs before anything is deployed.</p></div>
                       </div>
                     </div>
                   </div>
-
                   <div class="arch-connector"></div>
-
                   <div class="arch-layer">
                     <div class="arch-row">
                       <div class="arch-node arch-node-bottom node-hover">
                         <div class="arch-node-title">Vendor Scorecard</div>
-                        <div class="arch-node-subtitle">
-                          A structured comparison across cost, performance, and
-                          risk to guide infrastructure choices.
-                        </div>
-                        <div class="node-tooltip">
-                          <p class="tooltip-title">Vendor scorecard</p>
-                          <p class="tooltip-text">
-                            A normalized view that helps engineering, finance, and
-                            procurement select the right mix of providers.
-                          </p>
-                        </div>
+                        <div class="arch-node-subtitle">A structured comparison across cost, performance, and risk to guide infrastructure choices.</div>
+                        <div class="node-tooltip"><p class="tooltip-title">Vendor scorecard</p><p class="tooltip-text">A normalized view that helps engineering, finance, and procurement select the right mix of providers.</p></div>
                       </div>
                     </div>
                   </div>
                 </div>
-
-                <!-- Management mode -->
-                <div
-                  class="arch-view hidden"
-                  data-arch-view="management"
-                >
+                <div class="arch-view hidden" data-arch-view="management">
                   <div class="arch-layer">
                     <div class="arch-row">
                       <div class="arch-node node-hover">
                         <div class="arch-node-title">AI Models</div>
-                        <div class="arch-node-subtitle">
-                          Deployed foundation &amp; fine-tuned models.
-                        </div>
-                        <div class="node-tooltip">
-                          <p class="tooltip-title">AI models</p>
-                          <p class="tooltip-text">
-                            Models driving production experiences, observed by
-                            ClauseAI for cost and reliability.
-                          </p>
-                        </div>
+                        <div class="arch-node-subtitle">Deployed foundation &amp; fine-tuned models.</div>
+                        <div class="node-tooltip"><p class="tooltip-title">AI models</p><p class="tooltip-text">Models driving production experiences, observed by ClauseAI for cost and reliability.</p></div>
                       </div>
                       <div class="arch-node node-hover">
                         <div class="arch-node-title">Agents</div>
-                        <div class="arch-node-subtitle">
-                          Orchestrated multi-step workflows.
-                        </div>
-                        <div class="node-tooltip">
-                          <p class="tooltip-title">Agents</p>
-                          <p class="tooltip-text">
-                            Higher-level automations invoking tools, APIs, and
-                            models that ClauseAI monitors end-to-end.
-                          </p>
-                        </div>
+                        <div class="arch-node-subtitle">Orchestrated multi-step workflows.</div>
+                        <div class="node-tooltip"><p class="tooltip-title">Agents</p><p class="tooltip-text">Higher-level automations invoking tools, APIs, and models that ClauseAI monitors end-to-end.</p></div>
                       </div>
                       <div class="arch-node node-hover">
                         <div class="arch-node-title">APIs</div>
-                        <div class="arch-node-subtitle">
-                          Inference &amp; data-plane endpoints.
-                        </div>
-                        <div class="node-tooltip">
-                          <p class="tooltip-title">APIs</p>
-                          <p class="tooltip-text">
-                            Public and internal AI APIs whose traffic is used as
-                            live telemetry.
-                          </p>
-                        </div>
+                        <div class="arch-node-subtitle">Inference &amp; data-plane endpoints.</div>
+                        <div class="node-tooltip"><p class="tooltip-title">APIs</p><p class="tooltip-text">Public and internal AI APIs whose traffic is used as live telemetry.</p></div>
                       </div>
                     </div>
                   </div>
-
                   <div class="arch-connector"></div>
-
                   <div class="arch-layer">
                     <div class="arch-row">
                       <div class="arch-node arch-node-center node-hover">
                         <div class="arch-node-title">ClauseAI Intelligence Layer</div>
-                        <div class="arch-node-subtitle">
-                          Continuous monitoring of live AI infrastructure.
-                        </div>
+                        <div class="arch-node-subtitle">Continuous monitoring of live AI infrastructure.</div>
                         <ul class="arch-node-list">
                           <li>Policy Monitoring</li>
                           <li>Price Intelligence</li>
                           <li>Deprecation Detection</li>
                           <li>Performance Benchmarking</li>
                         </ul>
-                        <div class="node-tooltip">
-                          <p class="tooltip-title">Monitoring intelligence</p>
-                          <p class="tooltip-text">
-                            ClauseAI ingests telemetry from models, agents, and
-                            APIs to detect regressions, pricing shifts, and
-                            breaking changes before they impact customers.
-                          </p>
-                        </div>
+                        <div class="node-tooltip"><p class="tooltip-title">Monitoring intelligence</p><p class="tooltip-text">ClauseAI ingests telemetry from models, agents, and APIs to detect regressions, pricing shifts, and breaking changes before they impact customers.</p></div>
                       </div>
                     </div>
                   </div>
-
                   <div class="arch-connector"></div>
-
                   <div class="arch-layer">
                     <div class="arch-row arch-row-wrap">
                       <div class="arch-node arch-node-bottom node-hover">
                         <div class="arch-node-title">Migration Simulation</div>
-                        <div class="arch-node-subtitle">
-                          Explore how workloads behave on alternative vendors.
-                        </div>
-                        <div class="node-tooltip">
-                          <p class="tooltip-title">Migration simulation</p>
-                          <p class="tooltip-text">
-                            Safely test the impact of moving traffic across
-                            providers before changing production routes.
-                          </p>
-                        </div>
+                        <div class="arch-node-subtitle">Explore how workloads behave on alternative vendors.</div>
+                        <div class="node-tooltip"><p class="tooltip-title">Migration simulation</p><p class="tooltip-text">Safely test the impact of moving traffic across providers before changing production routes.</p></div>
                       </div>
                       <div class="arch-node arch-node-bottom node-hover">
                         <div class="arch-node-title">Optimization Recommendation</div>
-                        <div class="arch-node-subtitle">
-                          Concrete suggestions for routing and configuration.
-                        </div>
-                        <div class="node-tooltip">
-                          <p class="tooltip-title">Optimization recommendation</p>
-                          <p class="tooltip-text">
-                            ClauseAI proposes changes that balance cost, latency,
-                            and reliability for each workload.
-                          </p>
-                        </div>
+                        <div class="arch-node-subtitle">Concrete suggestions for routing and configuration.</div>
+                        <div class="node-tooltip"><p class="tooltip-title">Optimization recommendation</p><p class="tooltip-text">ClauseAI proposes changes that balance cost, latency, and reliability for each workload.</p></div>
                       </div>
                       <div class="arch-node arch-node-bottom node-hover">
                         <div class="arch-node-title">Vendor Negotiation Brief</div>
-                        <div class="arch-node-subtitle">
-                          Data-backed view for contract and pricing discussions.
-                        </div>
-                        <div class="node-tooltip">
-                          <p class="tooltip-title">Vendor negotiation brief</p>
-                          <p class="tooltip-text">
-                            Summaries of usage, alternatives, and performance
-                            leverage for each vendor.
-                          </p>
-                        </div>
+                        <div class="arch-node-subtitle">Data-backed view for contract and pricing discussions.</div>
+                        <div class="node-tooltip"><p class="tooltip-title">Vendor negotiation brief</p><p class="tooltip-text">Summaries of usage, alternatives, and performance leverage for each vendor.</p></div>
                       </div>
                     </div>
                   </div>
                 </div>
-
-                <!-- Architecture flow -->
-                <div
-                  class="arch-view hidden"
-                  data-arch-view="flow"
-                >
+                <div class="arch-view hidden" data-arch-view="flow">
                   <div class="arch-flow">
                     <div class="arch-flow-row">
                       <div class="arch-node arch-flow-node node-hover">
                         <div class="arch-node-title">Decision</div>
-                        <div class="arch-node-subtitle">
-                          Choose models, platforms, and vendors.
-                        </div>
-                        <div class="node-tooltip">
-                          <p class="tooltip-title">Decision</p>
-                          <p class="tooltip-text">
-                            ClauseAI informs which stacks to adopt before you
-                            deploy.
-                          </p>
-                        </div>
+                        <div class="arch-node-subtitle">Choose models, platforms, and vendors.</div>
+                        <div class="node-tooltip"><p class="tooltip-title">Decision</p><p class="tooltip-text">ClauseAI informs which stacks to adopt before you deploy.</p></div>
                       </div>
                       <div class="arch-connector arch-connector-arrow">→</div>
                       <div class="arch-node arch-flow-node node-hover">
                         <div class="arch-node-title">Deploy</div>
-                        <div class="arch-node-subtitle">
-                          Launch AI workloads into production.
-                        </div>
-                        <div class="node-tooltip">
-                          <p class="tooltip-title">Deploy</p>
-                          <p class="tooltip-text">
-                            Your chosen vendors and architectures power live
-                            experiences.
-                          </p>
-                        </div>
+                        <div class="arch-node-subtitle">Launch AI workloads into production.</div>
+                        <div class="node-tooltip"><p class="tooltip-title">Deploy</p><p class="tooltip-text">Your chosen vendors and architectures power live experiences.</p></div>
                       </div>
                       <div class="arch-connector arch-connector-arrow">→</div>
                       <div class="arch-node arch-flow-node node-hover">
                         <div class="arch-node-title">Monitor</div>
-                        <div class="arch-node-subtitle">
-                          Track cost, reliability, and behavior.
-                        </div>
-                        <div class="node-tooltip">
-                          <p class="tooltip-title">Monitor</p>
-                          <p class="tooltip-text">
-                            ClauseAI watches telemetry across models, agents, and
-                            APIs.
-                          </p>
-                        </div>
+                        <div class="arch-node-subtitle">Track cost, reliability, and behavior.</div>
+                        <div class="node-tooltip"><p class="tooltip-title">Monitor</p><p class="tooltip-text">ClauseAI watches telemetry across models, agents, and APIs.</p></div>
                       </div>
                       <div class="arch-connector arch-connector-arrow">→</div>
                       <div class="arch-node arch-flow-node node-hover">
                         <div class="arch-node-title">Optimize</div>
-                        <div class="arch-node-subtitle">
-                          Apply routing and configuration changes.
-                        </div>
-                        <div class="node-tooltip">
-                          <p class="tooltip-title">Optimize</p>
-                          <p class="tooltip-text">
-                            Recommendations help rebalance workloads and vendors.
-                          </p>
-                        </div>
+                        <div class="arch-node-subtitle">Apply routing and configuration changes.</div>
+                        <div class="node-tooltip"><p class="tooltip-title">Optimize</p><p class="tooltip-text">Recommendations help rebalance workloads and vendors.</p></div>
                       </div>
                       <div class="arch-connector arch-connector-arrow">→</div>
                       <div class="arch-node arch-flow-node node-hover">
                         <div class="arch-node-title">Re-Decide</div>
-                        <div class="arch-node-subtitle">
-                          Use live data to inform the next set of decisions.
-                        </div>
-                        <div class="node-tooltip">
-                          <p class="tooltip-title">Re-decide</p>
-                          <p class="tooltip-text">
-                            Vendor renewals and new infrastructure choices are
-                            grounded in production reality.
-                          </p>
-                        </div>
+                        <div class="arch-node-subtitle">Use live data to inform the next set of decisions.</div>
+                        <div class="node-tooltip"><p class="tooltip-title">Re-decide</p><p class="tooltip-text">Vendor renewals and new infrastructure choices are grounded in production reality.</p></div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- DEMO VIDEO -->
+        <section id="demo" class="section border-y border-navy/5">
+          <div class="section-inner">
+            <div class="section-header">
+              <p class="eyebrow">See it in action</p>
+              <h2 class="section-title">Watch how ClauseAI works</h2>
+              <p class="section-subtitle">
+                A walkthrough of the intelligence layer in a real enterprise AI environment.
+              </p>
+            </div>
+            <div class="flex flex-wrap gap-2 mb-8">
+              <button class="section-tab" data-scroll-to="#how-it-works">Overview</button>
+              <button class="section-tab" data-scroll-to="#architecture">Architecture</button>
+              <button class="section-tab section-tab-active" data-scroll-to="#demo">Demo</button>
+            </div>
+
+            <div class="mt-10 mx-auto max-w-4xl rounded-2xl overflow-hidden shadow-xl border border-navy/10">
+              <video controls preload="metadata" class="w-full block" style="aspect-ratio: 16/9;">
+                <source src="assets/demo.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             </div>
           </div>
         </section>
@@ -682,33 +526,77 @@
               </p>
             </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6">
-              <div class="stakeholder-card">
+              <div class="stakeholder-card" data-sc>
                 <h3>Engineering &amp; AI teams</h3>
                 <p>
                   Continuous visibility into model performance and reliability,
                   with guardrails to keep systems within SLOs.
                 </p>
+                <span class="sc-hint">See impact ↑</span>
+                <div class="sc-overlay">
+                  <div class="sc-number">~40%</div>
+                  <div class="sc-label">reduction in mean time to resolve model issues</div>
+                  <div class="sc-rule"></div>
+                  <ul class="sc-breakdown">
+                    <li>Real-time anomaly detection flags regressions 4–8 hrs before customer reports</li>
+                    <li>SLO guardrails prevent ~60% of latency breaches from reaching users</li>
+                    <li>Automated benchmarking saves ~6 hrs/sprint per engineer on manual testing</li>
+                  </ul>
+                </div>
               </div>
-              <div class="stakeholder-card">
+              <div class="stakeholder-card" data-sc>
                 <h3>Finance &amp; leadership</h3>
                 <p>
                   Understand inference spend, allocate cost by product and
                   team, and forecast AI infrastructure budgets with confidence.
                 </p>
+                <span class="sc-hint">See impact ↑</span>
+                <div class="sc-overlay">
+                  <div class="sc-number">15–30%</div>
+                  <div class="sc-label">lower AI infrastructure spend</div>
+                  <div class="sc-rule"></div>
+                  <ul class="sc-breakdown">
+                    <li>Token &amp; prompt optimization flags reduce waste by 12–18% on average</li>
+                    <li>Routing to cost-optimal models for the right workloads saves 8–15%</li>
+                    <li>Idle workload detection eliminates ~5% of total AI spend</li>
+                  </ul>
+                </div>
               </div>
-              <div class="stakeholder-card">
+              <div class="stakeholder-card" data-sc>
                 <h3>Security &amp; compliance</h3>
                 <p>
                   Monitor hallucination risk, anomalies, and governance signals
                   — with the telemetry required to meet emerging standards.
                 </p>
+                <span class="sc-hint">See impact ↑</span>
+                <div class="sc-overlay">
+                  <div class="sc-number">3×</div>
+                  <div class="sc-label">faster audit &amp; governance readiness</div>
+                  <div class="sc-rule"></div>
+                  <ul class="sc-breakdown">
+                    <li>Continuous telemetry replaces manual log aggregation (~40 hrs saved per audit cycle)</li>
+                    <li>Pre-built reports cover 90%+ of emerging standards (EU AI Act, NIST RMF)</li>
+                    <li>Hallucination monitoring catches 80%+ of anomalies before regulatory exposure</li>
+                  </ul>
+                </div>
               </div>
-              <div class="stakeholder-card">
+              <div class="stakeholder-card" data-sc>
                 <h3>Procurement &amp; vendor strategy</h3>
                 <p>
                   Benchmark AI vendors on real workloads, negotiate with data,
                   and prevent long-term lock-in as the landscape shifts.
                 </p>
+                <span class="sc-hint">See impact ↑</span>
+                <div class="sc-overlay">
+                  <div class="sc-number">20–25%</div>
+                  <div class="sc-label">savings on AI vendor contracts</div>
+                  <div class="sc-rule"></div>
+                  <ul class="sc-breakdown">
+                    <li>Benchmark data provides leverage in renewals (avg 12–18% rate reduction)</li>
+                    <li>Switching opportunity analysis prevents 15–30% lock-in premium</li>
+                    <li>Multi-vendor routing reduces single-provider cost concentration</li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
@@ -823,11 +711,7 @@
           >
             <div class="space-y-1">
               <div class="flex items-center gap-2">
-                <div
-                  class="h-7 w-7 rounded-md bg-midnight flex items-center justify-center"
-                >
-                  <span class="text-sand text-sm font-semibold">C</span>
-                </div>
+                <img src="assets/logo.png" alt="ClauseAI logo" class="h-7 w-auto" />
                 <span class="text-sm font-semibold text-navy">ClauseAI</span>
               </div>
               <p class="text-xs text-navy/60">
